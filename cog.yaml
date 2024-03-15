@@ -1,0 +1,16 @@
+build:
+  python_version: "3.11"
+  system_packages:
+    - "tesseract-ocr"
+    - "git"
+  python_packages:
+  - "git+https://github.com/huggingface/transformers.git"
+  - "pytesseract==0.3.10"
+  - "torch==2.2.1"
+  - "sentencepiece==0.2.0"
+  - "pillow==10.2.0"
+  - "protobuf==5.26.0"
+  run:
+    - curl -o /usr/local/bin/pget -L https://github.com/replicate/pget/releases/download/v0.6.0/pget_Linux_x86_64
+    - chmod +x /usr/local/bin/pget
+predict: "predict.py:Predictor"
