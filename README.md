@@ -2,17 +2,21 @@
 
 Cog wrapper for UDOP, a unified model by Microsoft for document classification, layout parsing and visual question answering.
 
-See the [paper](https://arxiv.org/pdf/2212.02623.pdf), [model page](https://huggingface.co/microsoft/udop-large) and Replicate [demo](https://github.com/replicate/cog-udop) for more details.
+See the [paper](https://arxiv.org/pdf/2212.02623.pdf), original [repository](https://github.com/microsoft/i-Code/tree/main/i-Code-Doc), [HF model page](https://huggingface.co/microsoft/udop-large) and Replicate [demo](https://github.com/replicate/cog-udop) for more details.
 
 ## API Usage
 
 You need to have Cog and Docker installed to run this model locally. To build the docker image with cog and run a prediction:
 
-```cog predict -i image=@sample.jpg -i prompt="Question answering. How many items are sold?"```
+```
+cog predict -i image=@sample.jpg -i prompt="Question answering. How many items are sold?"
+```
 
 To start a server and send requests to your locally or remotely deployed API:
 
-```cog run -p 5000 python -m cog.server.http```
+```
+cog run -p 5000 python -m cog.server.http
+```
 
 To use UDOP, you need to provide an image file and a text prompt describing the task you want to perform on the document. The API input arguments are as follows:
 
